@@ -4,7 +4,7 @@ Public source for [xnoto.dev](https://xnoto.dev), a personal portfolio and field
 
 ## Status
 
-The Astro site foundation is under review. No deployment workflow, S3 bucket, DNS record, or Cloudflare cache policy is owned by this repository yet.
+The Astro site foundation is merged. Canonical AWS and Cloudflare owners provision the S3 website bucket, DNS, and TLS outside this repository. The deployment workflow requires an explicit manual dispatch on `main`; it is the only path that can publish the built static artifact.
 
 ## Development
 
@@ -14,11 +14,11 @@ npm run dev
 npm run build
 ```
 
-GitHub Actions builds the site on pull requests and pushes to `main`. It does not publish the site.
+GitHub Actions builds the site on pull requests and pushes to `main`. The deployment workflow can publish only after an explicit `workflow_dispatch` from `main`.
 
 ## Deployment contract
 
-The future deployment uses a dedicated GitHub OIDC role with write access only to the site artifact bucket. AWS resource ownership and Cloudflare configuration remain outside this repository. The site repository will not store long-lived cloud credentials, OpenTofu state, or provider tokens.
+Deployment uses a dedicated GitHub OIDC role with write access only to the site artifact bucket. AWS resource ownership and Cloudflare configuration remain outside this repository. The site repository stores no long-lived cloud credentials, OpenTofu state, or provider tokens.
 
 ## Public-content policy
 
