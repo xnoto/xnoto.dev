@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Agentic platform operations — xnoto.dev"
+  description="A source-backed framing for repeatable, tool-scoped agent workflows with human approval."
+>
+  <section class="hero">
+    <p class="eyebrow">Reference framing</p>
+    <h1>Agentic platform operations</h1>
+    <p class="lede">
+      Repeatable agent environments are useful when they make work inspectable: a bounded task,
+      approved tools, validation, recorded evidence, and a human decision where change matters.
+    </p>
+  </section>
+
+  <section aria-labelledby="workflow">
+    <h2 id="workflow">The workflow</h2>
+    <div class="grid">
+      <article class="card"><h3>1. Bound the task</h3><p>State the objective, authoritative sources, exclusions, and expected output before delegation.</p></article>
+      <article class="card"><h3>2. Scope the tools</h3><p>Give an agent only the tools and access path its task needs; preserve the owning system’s controls.</p></article>
+      <article class="card"><h3>3. Validate evidence</h3><p>Separate authored source, CI validation, selected desired state, and verified runtime behavior.</p></article>
+      <article class="card"><h3>4. Keep approval human</h3><p>Use explicit approval gates for merges, publication, deployment, and live mutation.</p></article>
+    </div>
+  </section>
+
+  <section aria-labelledby="boundaries">
+    <h2 id="boundaries">What this does not claim</h2>
+    <p class="note">
+      This page is an architecture framing, not a claim of a public production fleet, scale, availability,
+      customer adoption, or autonomous operations. Those claims need separate, safe-to-publish evidence.
+    </p>
+    <ul class="list">
+      <li>No unrestricted shell or cloud-control access by default.</li>
+      <li>No credentials, state, or raw operational logs in public content.</li>
+      <li>No autonomous production mutation without explicit human approval.</li>
+      <li>No substitution of source evidence for runtime verification.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="public-evidence">
+    <h2 id="public-evidence">Public evidence trail</h2>
+    <p>
+      The companion project index links public repositories and describes their status. The intent is to make
+      implementation decisions and boundaries easier to inspect—not to turn a tool list into a marketing claim.
+    </p>
+  </section>
+</BaseLayout>

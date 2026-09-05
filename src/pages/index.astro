@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="xnoto.dev — platform infrastructure and agentic operations"
+  description="Personal portfolio and field notes on platform infrastructure, developer workflows, and agentic operations."
+>
+  <section class="hero">
+    <p class="eyebrow">Personal systems notebook</p>
+    <h1>Platforms, tools, and the humans who have to operate them.</h1>
+    <p class="lede">
+      I work on platform infrastructure, developer workflows, and the systems around AI agents.
+      This is a place for source-backed projects, design notes, and the lessons that survive contact with real constraints.
+    </p>
+  </section>
+
+  <section aria-labelledby="start-here">
+    <h2 id="start-here">Start here</h2>
+    <div class="grid">
+      <article class="card">
+        <p class="status">Architecture</p>
+        <h3><a href="/agentic-platform-operations/">Agentic platform operations</a></h3>
+        <p>How tool-scoped agents, validation, evidence, and human approval fit together.</p>
+      </article>
+      <article class="card">
+        <p class="status">Source-backed</p>
+        <h3><a href="/projects/">Projects</a></h3>
+        <p>A small catalog of maintained work, reference designs, and archived experiments.</p>
+      </article>
+      <article class="card">
+        <p class="status">Operations lab</p>
+        <h3><a href="https://makeitwork.cloud">Make IT Work</a></h3>
+        <p>A separate personal DevOps portal for operational services and infrastructure exploration.</p>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="working-style">
+    <h2 id="working-style">Working style</h2>
+    <p>
+      The useful part of an agentic workflow is not that it looks autonomous. It is that its tools,
+      boundaries, validation, and resulting evidence are clear enough for a person to review and trust.
+    </p>
+    <p>
+      Project pages here distinguish what public source demonstrates from what is a reference design,
+      experiment, or future direction. That distinction is part of the work.
+    </p>
+  </section>
+</BaseLayout>
