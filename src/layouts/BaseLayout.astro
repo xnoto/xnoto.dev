@@ -1,0 +1,48 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const navigation = [
+  { href: "/", label: "Home" },
+  { href: "/agentic-platform-operations/", label: "Agentic platform operations" },
+  { href: "/projects/", label: "Projects" },
+];
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="/">xnoto.dev</a>
+      <nav aria-label="Primary navigation">
+        <ul>
+          {navigation.map(({ href, label }) => (
+            <li>
+              <a href={href} aria-current={Astro.url.pathname === href ? "page" : undefined}>{label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <p>Built in public, with claims scoped to public evidence.</p>
+      <p><a href="https://github.com/xnoto">GitHub</a> · <a href="https://makeitwork.cloud">Make IT Work</a></p>
+    </footer>
+  </body>
+</html>

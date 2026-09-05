@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const projects = (await getCollection("projects")).sort((a, b) => {
+  return Number(b.data.featured) - Number(a.data.featured) || a.data.title.localeCompare(b.data.title);
+});
+---
+
+<BaseLayout
+  title="Projects — xnoto.dev"
+  description="Source-linked projects, reference designs, and archived experiments."
+>
+  <section class="hero">
+    <p class="eyebrow">Curated public work</p>
+    <h1>Projects with status and scope.</h1>
+    <p class="lede">
+      Each entry links to public source and identifies whether it is maintained work, a reference design, or archived.
+    </p>
+  </section>
+
+  <section class="grid" aria-label="Project catalog">
+    {projects.map((project) => (
+      <article class="card">
+        <p class="status">{project.data.status}</p>
+        <h2>{project.data.title}</h2>
+        <p>{project.data.summary}</p>
+        <ul class="tags" aria-label="Themes">
+          {project.data.themes.map((theme) => <li>{theme}</li>)}
+        </ul>
+        <p><a href={project.data.source}>View public source</a></p>
+      </article>
+    ))}
+  </section>
+</BaseLayout>
