@@ -13,9 +13,9 @@ This repository is the public source for `xnoto.dev`: a personal portfolio and t
 
 ## Delivery boundary
 
-This repository owns site source and build validation only. AWS S3 resources and deployment-role permissions belong to the canonical infrastructure owner; Cloudflare DNS, TLS, and cache behavior belong to its canonical infrastructure owner. Do not add deployment credentials or infrastructure state here.
+This repository owns site source, build validation, and the manual publication workflow. AWS S3 resources and deployment-role permissions belong to the canonical infrastructure owner; Cloudflare DNS, TLS, and cache behavior belong to its canonical infrastructure owner. Do not add deployment credentials or infrastructure state here.
 
-A deployment workflow is intentionally absent until the infrastructure change is reviewed, applied, and explicitly approved.
+The deployment workflow is enabled after upstream infrastructure approval. It can publish only through an explicitly approved manual dispatch from `main`.
 
 ## Workflow
 
