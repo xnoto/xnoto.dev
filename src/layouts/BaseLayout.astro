@@ -9,8 +9,8 @@ interface Props {
 const { title, description } = Astro.props;
 const navigation = [
   { href: "/", label: "Home" },
-  { href: "/agentic-platform-operations/", label: "Agentic platform operations" },
   { href: "/projects/", label: "Projects" },
+  { href: "/agentic-platform-operations/", label: "Agentic operations" },
 ];
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 ---
@@ -43,7 +43,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
     </main>
     <footer>
       <p>Built in public, with claims scoped to public evidence.</p>
-      <p><a href="https://github.com/xnoto">GitHub</a> · <a href="https://makeitwork.cloud">Make IT Work</a></p>
+      <p>
+        <a href="https://www.linkedin.com/in/xnoto">LinkedIn</a> · <a href="https://github.com/xnoto">GitHub</a> · <a href="https://makeitwork.cloud">Make IT Work</a>
+      </p>
     </footer>
   </body>
 </html>
